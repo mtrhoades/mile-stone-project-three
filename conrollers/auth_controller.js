@@ -8,14 +8,14 @@ const pool = require('../models/db')
 
 // login page route
 router.get('/', async (req, res) => {
-    try {
-        const allUsers = await pool.query(
-            "SELECT * FROM users"
-        );
-        res.json(allUsers.rows);
-    } catch (err) {
-        res.status(404).send('Error 404 PAGE NOT FOUND!')
-    }
+    // try {
+    //     const allUsers = await pool.query(
+    //         "SELECT * FROM users"
+    //     );
+    //     res.json(allUsers.rows);
+    // } catch (err) {
+    //     res.status(404).send('Error 404 PAGE NOT FOUND!')
+    // }
 })
 
 // sign up 
