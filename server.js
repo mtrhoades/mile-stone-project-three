@@ -1,27 +1,36 @@
 // dependencies
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-// const path = require('path');
-
-// configuration
-require('dotenv').config();
-const PORT = process.env.PORT;
 const app = express();
+// const path = require('path');
+const bodyParser = require("body-parser");
+const defineCurrentUser = require("./middleware/defineCurrentUser")
+// configuration
+const PORT = process.env.PORT;
+
 
 // middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.resolve(__dirname, "../frontend/build"))); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(defineCurrentUser)
+
+
 
 // root route
 app.get('/', (req, res) => {
     res.send('Welcome to the Kula Lodge App!')
 });
 
-// controller routes
-const loginController = require('./conrollers/auth_controller');
-app.use('/auth', loginController);
+// Auth routes
+app.use('/users', require('./controllers/users'))
+app.use('/authentication', require('./controllers/authentication'))
+
+
 
 // server listen
 app.listen(PORT, () => {
