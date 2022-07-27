@@ -1,0 +1,21 @@
+Host
+ec2-52-204-157-26.compute-1.amazonaws.com
+
+Database
+d1smmmgrqfghl4
+
+User
+ekhzbljuuglwvr
+
+Port
+5432
+
+Password
+77f23d134d0adb72150bd8861f0cbaba7aa484801741599234e141e19ed10bc3
+
+URI
+postgres://ekhzbljuuglwvr:77f23d134d0adb72150bd8861f0cbaba7aa484801741599234e141e19ed10bc3@ec2-52-204-157-26.compute-1.amazonaws.com:5432/d1smmmgrqfghl4
+
+Heroku CLI
+heroku pg:psql postgresql-convex-47503 --app kula-lodge
+

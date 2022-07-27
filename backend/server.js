@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Kula Lodge App!')
 });
 
-// controller routes
-const loginController = require('./conrollers/auth_controller');
-app.use('/auth', loginController);
+// // controller routes
+// const loginController = require('./conrollers/auth_controller');
+// app.use('/auth', loginController);
 
 // server listen
 app.listen(PORT, () => {
